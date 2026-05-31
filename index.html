@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Black Hole · Particles + Webcam</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div id="stage">
+  <video id="cam" playsinline muted></video>
+  <div id="darken"></div>
+  <canvas id="gl"></canvas>
+
+  <div id="panel">
+    <div class="row">
+      <label>Shape</label>
+      <select id="selShape">
+        <option value="x">X</option>
+        <option value="circle">Circle</option>
+        <option value="star">Star</option>
+        <option value="triangle">Triangle</option>
+      </select>
+    </div>
+    <div class="row">
+      <label>Color</label>
+      <select id="selColor">
+        <option value="white">White</option>
+        <option value="ice">Ice (cyan)</option>
+        <option value="fire">Fire (orange)</option>
+        <option value="matrix">Matrix (green)</option>
+        <option value="purple">Purple → pink</option>
+        <option value="rainbow">Rainbow</option>
+      </select>
+    </div>
+    <div class="sep"></div>
+    <div class="row">
+      <label>Zoom <span class="v" id="vZoom"></span></label>
+      <input id="cZoom" type="range" min="0.4" max="2.6" step="0.01" value="1.0">
+    </div>
+    <div class="row">
+      <label>Depth <span class="v" id="vFunnel"></span></label>
+      <input id="cFunnel" type="range" min="0" max="5" step="0.05" value="2.6">
+    </div>
+    <div class="row">
+      <label>Twist <span class="v" id="vWind"></span></label>
+      <input id="cWind" type="range" min="0" max="5" step="0.05" value="2.2">
+    </div>
+    <div class="row">
+      <label>Turbulence <span class="v" id="vChaos"></span></label>
+      <input id="cChaos" type="range" min="0" max="2.5" step="0.01" value="1.0">
+    </div>
+    <div class="row">
+      <label>Size <span class="v" id="vSize"></span></label>
+      <input id="cSize" type="range" min="8" max="60" step="1" value="26">
+    </div>
+    <div class="row">
+      <label>Core (sphere) <span class="v" id="vCore"></span></label>
+      <input id="cCore" type="range" min="0" max="2" step="0.05" value="0.9">
+    </div>
+    <div class="row">
+      <label>Base speed <span class="v" id="vSpeed"></span></label>
+      <input id="cSpeed" type="range" min="0.1" max="2.4" step="0.01" value="0.5">
+    </div>
+  </div>
+
+  <div id="status">
+    <div>Right hand closed (fist) — <b>rotate</b> · open — <b>zoom</b> with your fingers</div>
+    <div>Left hand — spin <b>speed</b></div>
+    <div class="live" id="live"></div>
+  </div>
+
+  <div id="intro">
+    <h1>Particle Black Hole</h1>
+    <p>A spiral of 30,000 X-shaped particles over your camera. Grab it with your right hand to rotate it, and use your left hand to speed up or slow down the spin.</p>
+    <div class="keys">
+      <span><b>Right hand closed</b> — grab and move it to rotate; <b>open</b> — pinch or spread your fingers to zoom</span>
+      <span><b>Left hand</b> — open or close to raise or lower the spin speed</span>
+    </div>
+    <button id="start">Start camera</button>
+    <div id="statusIntro"></div>
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
