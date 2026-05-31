@@ -79,4 +79,3 @@ Quick constants live in `js/config.js`:
 
 - [Three.js](https://threejs.org/)
 - [MediaPipe Tasks Vision — Hand Landmarker](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker)
-- Inspired by particle‑swarm visualizers such as [particles.casberry.in](https://particles.casberry.in/)
